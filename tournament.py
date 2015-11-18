@@ -7,19 +7,23 @@ import psycopg2
 import bleach
 
 
-def connect():
+def connect(someFunction):
     "Connects to the PostgreSQL database.  Returns a database connection."
     db = psycopg2.connect("dbname=tournament")
     cursor = db.cursor()
-    return (db, cursor)
+    needCommit = someFunction(cursor)
+    if (needCommit):
+        db.commit()
+    db.close()
 
 
 def deleteMatches():
     "Removes all the match records from the database."
-    db, cursor = connect()
-    cursor.execute("DELETE FROM matches;")
-    db.commit()
-    db.close()
+    connect(
+        lambda cursor:
+            cursor.execute("DELETE FROM matches;")
+            is True     # commit required
+    )
 
 
 def deletePlayers():

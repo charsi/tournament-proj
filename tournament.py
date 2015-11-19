@@ -151,7 +151,7 @@ def swissPairings():
         # Give weakest player an extra point which will give him
         # advantage of winning an extra match in the rankings
         # for the next round
-        lastPlayer = wins_tbl.pop()  # remove last player from the list
+        lastPlayer = wins_tbl.pop()[0]  # remove last player from the list
         addPoints(lastPlayer, 1)
     pairList = []
     for i in range(0, numOfPlayers, 2):

@@ -21,15 +21,16 @@ To set up the test environment
 
 1. Install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/)
 1. Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) to \<some local folder\>
-1. `$ cd <some local folder>`
-1. `$ vagrant up`
+1. ```bash
+cd <some local folder>
+```
+1. `vagrant up`
 1. Download the files from this repo to <some local folder>/vagrant/tournament
-1. `$ vagrant ssh` (you should now be logged into the vagrant virtual machine)
+1. `vagrant ssh` (you should now be logged into the vagrant virtual machine)
 1. navigate to '/vagrant/tournament' this folder is shared from the host machine nd should have all the required files
 
 
 To test the application
 
 1. `psql -f tournament.sql` - This will create the tournament database and required tables.
-1. Import 'tournament.sql' to create the required tables 
-1. Run 'tournament_test.py' to test the functions in 'tournament.py'
+1. Run `python tournament_test.py` to test the functions in 'tournament.py'

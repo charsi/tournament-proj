@@ -24,7 +24,7 @@ To set up the test environment
 1. `$ cd <some local folder>`
 1. `$ vagrant up`
 1. Download the files from this repo to <some local folder>/vagrant/tournament
-1. `$ vagrant up` (you should now be logged into the vagrant virtual machine)
+1. `$ vagrant ssh` (you should now be logged into the vagrant virtual machine)
 1. navigate to '/vagrant/tournament' this folder is shared from the host machine nd should have all the required files
 
 

@@ -21,9 +21,8 @@ To set up the test environment
 
 1. Install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/)
 1. Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) to \<some local folder\>
-1. ```bash
-cd <some local folder>
-```
+1. `cd <some local folder>`
+
 1. `vagrant up`
 1. Download the files from this repo to <some local folder>/vagrant/tournament
 1. `vagrant ssh` (you should now be logged into the vagrant virtual machine)

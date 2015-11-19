@@ -12,15 +12,19 @@ CREATE TABLE players(
 	player_id serial primary key UNIQUE,
 	name text,
 	wins int,
-	matches int
+	matches int,
+	points real, -- 1 for every win, .5 for tie
+	opp_points real -- recorded only when victorious
 );
 
 DROP TABLE IF EXISTS matches CASCADE;
 
 CREATE TABLE matches(
 	match_id serial primary key UNIQUE,
+	player1 int references players (player_id) ON DELETE CASCADE,
+	player2 int references players (player_id) ON DELETE CASCADE,
 	winner int references players (player_id) ON DELETE CASCADE,
-	loser int references players (player_id) ON DELETE CASCADE
+	tie boolean
 );
 
 

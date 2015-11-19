@@ -6,7 +6,7 @@ A [swiss-style tournament]() management system with functionality for
  - Storing players, their rankings, outcome of games
  - Determining optimum player matches for each round of the tournament based on the number of previous wins
 
-The app also support for
+The app also has support for
   
   - Matches that end up in ties
   - Odd number of players

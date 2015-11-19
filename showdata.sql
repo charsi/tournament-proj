@@ -1,2 +1,2 @@
 select * from players;
-select * from games;
+select * from matches;

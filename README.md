@@ -1,7 +1,7 @@
 # Tournament-proj
 
 ## What is this?
-A [swiss-style tournament]() management system with functionality for
+A [swiss-style]() tournament management system with functionality for
 
  - Storing players, their rankings, outcome of games
  - Determining optimum player matches for each round of the tournament based on the number of previous wins

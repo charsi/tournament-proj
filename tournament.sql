@@ -1,10 +1,4 @@
 -- Table definitions for the tournament project.
---
--- Put your SQL 'create table' statements in this file; also 'create view'
--- statements if you choose to use it.
---
--- You can write comments in this file by starting them with two dashes, like
--- these lines here.
 
 DROP TABLE IF EXISTS players CASCADE;
 
@@ -14,8 +8,11 @@ CREATE TABLE players(
 	wins int,
 	matches int,
 	points real, -- 1 for every win, .5 for tie
-	opp_points real -- recorded only when victorious
+	opp_points real -- recorded only when player wins
 );
+
+CREATE VIEW wins_tbl AS SELECT player_id, name, wins, matches
+	FROM players ORDER BY points DESC, opp_points DESC;
 
 DROP TABLE IF EXISTS matches CASCADE;
 
@@ -26,9 +23,6 @@ CREATE TABLE matches(
 	winner int references players (player_id) ON DELETE CASCADE,
 	tie boolean
 );
-
-
-
 
 
 

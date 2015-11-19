@@ -1,3 +1,5 @@
+-- Add dummy data into tables for testing
+
 
 \c tournament;
 DELETE FROM matches;

@@ -1,16 +1,16 @@
 # Tournament-proj
 
 ## What is this?
-A swiss style tournament management system with functions to
+A [swiss-style tournament]() management system with functionality for
 
- - Store players, their rankings, outcome of games
- - Automatic matching of players of similar calibre based on their performance
+ - Storing players, their rankings, outcome of games
+ - Determining optimum player matches for each round of the tournament based on the number of previous wins
 
-The app can also
+The app also support for
   
-  - Supports matches that end up in ties
-  - Mutiple tournaments
+  - Matches that end up in ties
   - Odd number of players
+  - Resorting to strenght of opposition players defeated to determine player matches if number of wins are identical 
 
 ## Instructions
 This project requires python 2.7 and a [postgresql](http://www.postgresql.org/) databse.
@@ -32,4 +32,4 @@ To test the application
 
 1. Create a database called 'tournament' in psql
 1. Import 'tournament.sql' to create the required tables 
-1. Run 'tournament_test.py' and  'tournament_test_extended.py' to test the functions in 'tournament.py'
+1. Run 'tournament_test.py' to test the functions in 'tournament.py'

@@ -7,8 +7,9 @@ CREATE TABLE players(
 	name text,
 	wins int,
 	matches int,
-	points real, -- 1 for every win, .5 for tie
-	opp_points real -- recorded only when player wins
+	points real, -- Win = 1, tie = 0.5
+	-- cumulative points of opponents defeated*
+	opp_points real 
 );
 
 CREATE VIEW wins_tbl AS SELECT player_id, name, wins, matches
@@ -23,6 +24,5 @@ CREATE TABLE matches(
 	winner int references players (player_id) ON DELETE CASCADE,
 	tie boolean
 );
-
 
 

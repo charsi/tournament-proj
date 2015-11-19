@@ -47,7 +47,8 @@ def countPlayers():
 def registerPlayer(name):
     "Registers new player for the tournament."
     def dbWorker(c):
-        clean_name = bleach.clean(name)      # Strips unsafe <script> tags etc
+        # Strips unsafe HTML <script> tags etc
+        clean_name = bleach.clean(name, strip=True)
         c.execute("""INSERT INTO players (name, wins, matches, points, opp_points)
             VALUES(%s, 0, 0, 0.0, 0.0)""", (clean_name,))
     connect(dbWorker, True)
@@ -151,7 +152,7 @@ def swissPairings():
         # advantage of winning an extra match in the rankings
         # for the next round
         lastPlayer = wins_tbl.pop()  # remove last player from the list
-        addPoints(lastPlayer, 1)  # give him an extra point
+        addPoints(lastPlayer, 1)
     pairList = []
     for i in range(0, numOfPlayers, 2):
         playerOne = wins_tbl[i]

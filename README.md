@@ -30,6 +30,6 @@ To set up the test environment
 
 To test the application
 
-1. Create a database called 'tournament' in psql
+1. `psql -f tournament.sql` - This will create the tournament database and required tables.
 1. Import 'tournament.sql' to create the required tables 
 1. Run 'tournament_test.py' to test the functions in 'tournament.py'

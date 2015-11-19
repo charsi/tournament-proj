@@ -49,8 +49,8 @@ def registerPlayer(name):
     def dbWorker(c):
         # Strips unsafe HTML <script> tags etc
         clean_name = bleach.clean(name, strip=True)
-        c.execute("""INSERT INTO players (name, wins, matches, points, opp_points)
-            VALUES(%s, 0, 0, 0.0, 0.0)""", (clean_name,))
+        c.execute("""INSERT INTO players (name)
+            VALUES(%s)""", (clean_name,))
     connect(dbWorker, True)
 
 
@@ -108,8 +108,8 @@ def reportMatch(player1, player2, tied):
                 SET matches = matches+1
                 WHERE player_id=%s""", (loser, ))
             # record result in matches table
-            c.execute("""INSERT INTO matches (player1, player2, winner, tie)
-                VALUES(%s,%s,%s, False)""", (winner, loser, winner))
+            c.execute("""INSERT INTO matches (player1, player2, winner)
+                VALUES(%s,%s,%s)""", (winner, loser, winner))
         connect(dbWorker, True)
 
 
